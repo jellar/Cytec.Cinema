@@ -9,13 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{187BFD2C-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{7BD35DDA-B65E-4935-A724-B279F8B1D4A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.App", "Cytec.Cinema.App\Cytec.Cinema.App.csproj", "{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytec.Cinema.App", "Cytec.Cinema.App\Cytec.Cinema.App.csproj", "{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Domain", "Cytec.Cinema.Domain\Cytec.Cinema.Domain.csproj", "{D8995C69-B1E0-4741-B495-2A776E5FCB10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytec.Cinema.Domain", "Cytec.Cinema.Domain\Cytec.Cinema.Domain.csproj", "{D8995C69-B1E0-4741-B495-2A776E5FCB10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Persistence", "Cytec.Cinema.Persistence\Cytec.Cinema.Persistence.csproj", "{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytec.Cinema.Persistence", "Cytec.Cinema.Persistence\Cytec.Cinema.Persistence.csproj", "{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Application", "Cytec.Cinema.Application\Cytec.Cinema.Application.csproj", "{996B5244-F4B6-4F1A-BF81-E0CF9366655E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytec.Cinema.Application", "Cytec.Cinema.Application\Cytec.Cinema.Application.csproj", "{996B5244-F4B6-4F1A-BF81-E0CF9366655E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B356CAD-2780-4073-B8D3-B8DD1ACF2541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Application.Tests", "Cytec.Cinema.Application.Tests\Cytec.Cinema.Application.Tests.csproj", "{C625EB45-8A18-4850-A6C1-906609683B45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C625EB45-8A18-4850-A6C1-906609683B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C625EB45-8A18-4850-A6C1-906609683B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C625EB45-8A18-4850-A6C1-906609683B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C625EB45-8A18-4850-A6C1-906609683B45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{D8995C69-B1E0-4741-B495-2A776E5FCB10} = {61D0F8AE-E572-439F-BD06-26C88B95367A}
 		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89} = {187BFD2C-292C-498A-BC3D-F5B2231C7FAD}
 		{996B5244-F4B6-4F1A-BF81-E0CF9366655E} = {61D0F8AE-E572-439F-BD06-26C88B95367A}
+		{C625EB45-8A18-4850-A6C1-906609683B45} = {6B356CAD-2780-4073-B8D3-B8DD1ACF2541}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E6C8B26-1BD7-43F0-8968-109A700F9ECB}
