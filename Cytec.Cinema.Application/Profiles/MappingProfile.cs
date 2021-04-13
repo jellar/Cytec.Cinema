@@ -11,6 +11,7 @@ namespace Cytec.Cinema.Application.Profiles
             CreateMap<Show, ShowDetailsVm>();
             CreateMap<Screen, ScreenVm>();
             CreateMap<Movie, MovieVm>();
+            CreateMap<Booking, BookingsVm>();
         }
     }
 }

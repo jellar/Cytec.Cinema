@@ -20,10 +20,13 @@ Show Time: @Model.MovieTime.ToString("dd/MM/yyyy HH:mm")
 <div class="row p-25">
     <div class="col-12 col-sm-6">
         <form method="post" asp-antiforgery="true">
+            <input type="hidden" asp-for="Movie" />
+            <input type="hidden" asp-for="Price" />
+
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
-                    <input type="text" asp-for="User" class="form-control"/>
+                    <input type="text" asp-for="User" class="form-control" />
                     <span asp-validation-for="User"></span>
                 </div>
             </div>
@@ -31,7 +34,7 @@ Show Time: @Model.MovieTime.ToString("dd/MM/yyyy HH:mm")
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Email Address</label>
                 <div class="col-sm-8">
-                    <input type="text" asp-for="UserEmail"  class="form-control"/>
+                    <input type="text" asp-for="UserEmail" class="form-control" />
                     <span asp-validation-for="UserEmail"></span>
                 </div>
             </div>
@@ -39,7 +42,7 @@ Show Time: @Model.MovieTime.ToString("dd/MM/yyyy HH:mm")
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Total tickets</label>
                 <div class="col-sm-8">
-                    <input type="number" asp-for="Tickets" class="form-control"/>
+                    <input type="number" asp-for="Tickets" class="form-control" />
                     <span asp-validation-for="Tickets"></span>
                 </div>
             </div>

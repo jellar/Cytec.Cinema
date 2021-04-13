@@ -12,7 +12,7 @@ namespace Cytec.Cinema.Persistence.Configurations
             builder.Property(b => b.BookingDate).IsRequired();
             builder.Property(b => b.User).IsRequired().HasMaxLength(65);
             builder.Property(b => b.UserEmail).IsRequired().HasMaxLength(65);
-            builder.Property(b => b.ShowId).IsRequired();
+            builder.Property(b => b.MovieTitle).HasMaxLength(125);
             builder.Property(m => m.Amount).HasColumnType("decimal(8,2)");
         }
     }

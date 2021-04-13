@@ -3,9 +3,7 @@ using Cytec.Cinema.Application.Contracts.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Cytec.Cinema.Application.Features.Shows.Commands;
 using Cytec.Cinema.Application.Features.Shows.Queries;
@@ -41,18 +39,29 @@ namespace Cytec.Cinema.App.Controllers
         [HttpPost("booking/{id}")]
         public async Task<IActionResult> Booking([FromForm] BookingCommand command)
         {
+            _logger.LogInformation("Booking started for movie - " + command.Movie);
             if (ModelState.IsValid)
             {
-                await _mediator.Send(command);
-                return RedirectToAction("List");
+                try
+                {
+                    await _mediator.Send(command);
+                    return RedirectToAction("List");
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError("Booking failed - " + e);
+                    throw;
+                }
+                
             }
 
             return View(command);
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> List()
         {
-            return View();
+            var bookings = await _mediator.Send(new GetAllBookings());
+            return View(bookings);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

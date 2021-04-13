@@ -4,14 +4,16 @@ using Cytec.Cinema.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cytec.Cinema.Persistence.Migrations
 {
     [DbContext(typeof(CinemaDbContext))]
-    partial class CinemaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210413010203_BookingTableUpdate")]
+    partial class BookingTableUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,9 +40,8 @@ namespace Cytec.Cinema.Persistence.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MovieTitle")
-                        .HasColumnType("nvarchar(125)")
-                        .HasMaxLength(125);
+                    b.Property<int>("ShowId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Tickets")
                         .HasColumnType("int");
@@ -56,6 +57,9 @@ namespace Cytec.Cinema.Persistence.Migrations
                         .HasMaxLength(65);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ShowId")
+                        .IsUnique();
 
                     b.ToTable("Bookings");
                 });
@@ -83,12 +87,17 @@ namespace Cytec.Cinema.Persistence.Migrations
                     b.Property<TimeSpan>("RunningTime")
                         .HasColumnType("time");
 
+                    b.Property<int?>("ScreenId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(125)")
                         .HasMaxLength(125);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ScreenId");
 
                     b.ToTable("Movies");
                 });
@@ -151,6 +160,22 @@ namespace Cytec.Cinema.Persistence.Migrations
                     b.HasIndex("ScreenId");
 
                     b.ToTable("Shows");
+                });
+
+            modelBuilder.Entity("Cytec.Cinema.Domain.Booking", b =>
+                {
+                    b.HasOne("Cytec.Cinema.Domain.Show", "Show")
+                        .WithOne("Booking")
+                        .HasForeignKey("Cytec.Cinema.Domain.Booking", "ShowId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Cytec.Cinema.Domain.Movie", b =>
+                {
+                    b.HasOne("Cytec.Cinema.Domain.Screen", null)
+                        .WithMany("Movies")
+                        .HasForeignKey("ScreenId");
                 });
 
             modelBuilder.Entity("Cytec.Cinema.Domain.Show", b =>

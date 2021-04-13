@@ -7,16 +7,19 @@ using System.Xml.Schema;
 using Cytec.Cinema.Application.Contracts.Persistence;
 using Cytec.Cinema.Domain;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Cytec.Cinema.Application.Features.Shows.Commands
 {
     public class BookingCommandHandler : IRequestHandler<BookingCommand>
     {
         private readonly IAsyncRepository<Booking> _bookingRepository;
+        private readonly ILogger<BookingCommandHandler> _logger;
 
-        public BookingCommandHandler(IAsyncRepository<Booking> bookingRepository)
+        public BookingCommandHandler(IAsyncRepository<Booking> bookingRepository, ILogger<BookingCommandHandler> logger)
         {
             _bookingRepository = bookingRepository;
+            _logger = logger;
         }
         public async Task<Unit> Handle(BookingCommand request, CancellationToken cancellationToken)
         {
@@ -24,11 +27,13 @@ namespace Cytec.Cinema.Application.Features.Shows.Commands
             {
                 var booking = new Booking()
                 {
-                    BookingDate = new DateTime(),
+                    MovieTitle = request.Movie,
+                    BookingDate = DateTime.Now,
                     Amount = request.Tickets * request.Price,
-                    ShowId = request.Id,
-                    CreatedDate = new DateTime(),
-                    Tickets = request.Tickets
+                    CreatedDate = DateTime.Now,
+                    Tickets = request.Tickets,
+                    User = request.User,
+                    UserEmail = request.UserEmail
                 };
 
                 var newBooking = await _bookingRepository.AddAsync(booking);
@@ -36,7 +41,7 @@ namespace Cytec.Cinema.Application.Features.Shows.Commands
             }
             catch (Exception e)
             {
-                
+                _logger.LogError("Booking failed - " + e);
                 throw;
             }
 

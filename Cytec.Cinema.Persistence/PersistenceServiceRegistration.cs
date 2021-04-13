@@ -18,6 +18,7 @@ namespace Cytec.Cinema.Persistence
             );
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IShowRepository, ShowRepository>();
+            services.AddScoped<IBookingRepository, BookingRepository>();
             return services;
         }
     }
