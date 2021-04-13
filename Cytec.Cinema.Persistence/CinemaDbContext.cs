@@ -46,11 +46,7 @@ namespace Cytec.Cinema.Persistence
                     ScreenCapacity = 100
                 }
             };
-
-            //modelBuilder.Entity<Screen>().HasData(screens[0]);
-            //modelBuilder.Entity<Screen>().HasData(screens[1]);
-            //modelBuilder.Entity<Screen>().HasData(screens[2]);
-
+            
             var movies = new List<Movie>()
             {
                 new Movie
@@ -87,44 +83,6 @@ namespace Cytec.Cinema.Persistence
                     Price = 10
                 }
             };
-
-            //modelBuilder.Entity<Movie>().HasData(movies[0]);
-            //modelBuilder.Entity<Movie>().HasData(movies[1]);
-            //modelBuilder.Entity<Movie>().HasData(movies[2]);
-            //modelBuilder.Entity<Movie>().HasData(movies[3]);
-
-            //modelBuilder.Entity<Show>().HasData(new Show()
-            //{
-            //    Id = 1,
-            //    TimeStart = new DateTime(2021, 4, 18, 11, 00, 00),
-            //    TimeEnd = new DateTime(2021, 4, 25, 13, 00, 00),
-            //    Movie = movies[0],
-            //    Screen = screens[0]
-            //});
-            //modelBuilder.Entity<Show>().HasData(new Show()
-            //{
-            //    Id = 2,
-            //    TimeStart = new DateTime(2021, 4, 12, 12, 00, 00),
-            //    TimeEnd = new DateTime(2021, 4, 30, 15, 00, 00),
-            //    Movie = movies[1],
-            //    Screen = screens[0]
-            //});
-            //modelBuilder.Entity<Show>().HasData(new Show()
-            //{
-            //    Id = 3,
-            //    TimeStart = new DateTime(2021, 4, 14, 11, 00, 00),
-            //    TimeEnd = new DateTime(2021, 4, 14, 13, 00, 00),
-            //    Movie = movies[2],
-            //    Screen = screens[1]
-            //});
-            //modelBuilder.Entity<Show>().HasData(new Show()
-            //{
-            //    Id = 4,
-            //    TimeStart = new DateTime(2021, 4, 10, 17, 00, 00),
-            //    TimeEnd = new DateTime(2021, 4, 20, 20, 00, 00),
-            //    Movie = movies[3],
-            //    Screen = screens[0]
-            //});
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

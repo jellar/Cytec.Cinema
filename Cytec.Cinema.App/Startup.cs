@@ -37,7 +37,7 @@ namespace Cytec.Cinema.App
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CinemaDbContext db)
         {
             if (env.IsDevelopment())
             {
@@ -62,6 +62,9 @@ namespace Cytec.Cinema.App
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            db.Database.EnsureCreated();
+            db.Database.ExecuteSqlRaw("SELECT 1");
         }
     }
 }

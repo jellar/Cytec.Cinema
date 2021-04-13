@@ -12,6 +12,5 @@ namespace Cytec.Cinema.Domain
         public DateTime TimeEnd { get; set; }
         public Movie Movie { get; set; }
         public Screen Screen { get; set; }
-
     }
 }
