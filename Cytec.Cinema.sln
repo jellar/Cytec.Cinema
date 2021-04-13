@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{61D0F8AE-E572-439F-BD06-26C88B95367A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{187BFD2C-292C-498A-BC3D-F5B2231C7FAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{7BD35DDA-B65E-4935-A724-B279F8B1D4A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.App", "Cytec.Cinema.App\Cytec.Cinema.App.csproj", "{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Domain", "Cytec.Cinema.Domain\Cytec.Cinema.Domain.csproj", "{D8995C69-B1E0-4741-B495-2A776E5FCB10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Persistence", "Cytec.Cinema.Persistence\Cytec.Cinema.Persistence.csproj", "{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytec.Cinema.Application", "Cytec.Cinema.Application\Cytec.Cinema.Application.csproj", "{996B5244-F4B6-4F1A-BF81-E0CF9366655E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8995C69-B1E0-4741-B495-2A776E5FCB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8995C69-B1E0-4741-B495-2A776E5FCB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8995C69-B1E0-4741-B495-2A776E5FCB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8995C69-B1E0-4741-B495-2A776E5FCB10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996B5244-F4B6-4F1A-BF81-E0CF9366655E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A27BBC70-7B25-49BD-AB75-215C4DCC9BD3} = {7BD35DDA-B65E-4935-A724-B279F8B1D4A6}
+		{D8995C69-B1E0-4741-B495-2A776E5FCB10} = {61D0F8AE-E572-439F-BD06-26C88B95367A}
+		{DE783BF9-D18E-4EDB-AD57-93550BC4CB89} = {187BFD2C-292C-498A-BC3D-F5B2231C7FAD}
+		{996B5244-F4B6-4F1A-BF81-E0CF9366655E} = {61D0F8AE-E572-439F-BD06-26C88B95367A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E6C8B26-1BD7-43F0-8968-109A700F9ECB}
+	EndGlobalSection
+EndGlobal

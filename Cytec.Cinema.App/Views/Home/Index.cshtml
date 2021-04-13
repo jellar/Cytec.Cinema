@@ -1,0 +1,29 @@
+﻿
+@model List<Cytec.Cinema.Application.Features.Shows.Queries.ShowDetailsVm>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h5>Welcome to Cinema box</h5>
+@foreach (var show in Model)
+{
+    <div class="card">
+        <div class="card-header">
+            @show.Movie.Title
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@show.Movie.Title</h5>
+            <strong class="text-right">
+                @show.TimeStart.DayOfWeek - @show.TimeStart.Day @show.TimeStart.Date.ToString("MMMM")
+            </strong>
+            <p class="card-text">@show.Movie.Description</p>
+            Show Timings: @show.TimeStart.ToString("HH:mm") - @show.TimeEnd.ToString("HH:mm")
+            <br/>
+            Pirce: £@show.Movie.Price <a asp-action="Booking" asp-route-id="@show.Id" class="btn btn-primary">Book</a>
+        </div>
+    </div> 
+    <br/>
+}
+</div>
